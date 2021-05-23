@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <body>
+    <div id="root"></div>
+ </body>
+
+    <script type="text/babel">
+    debugger
+      class Hello extends React.Component {
+        render() {
+          let myGreet = '';
+          let d = new Date();
+          if(d.getSeconds() % 2 === 0){
+            myGreet = <h1 style={{color: 'yellow'}}>Hello World! (t= {d.toLocaleTimeString()})</h1>;
+          } else {
+            myGreet = <div style={{color: 'white'}}>(t= {d.toLocaleTimeString()})</div>
+          }
+          
+          return (
+            <div style={{backgroundColor: 'red'}}>  
+                {myGreet}
+            </div>
+          )
+        }
+      }
+
+      ReactDOM.render(<Hello />, document.getElementById('root'))
+    </script>
+  
+</html>
